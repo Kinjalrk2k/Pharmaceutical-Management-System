@@ -1,0 +1,12 @@
+.container {
+  margin-top: 20px;
+}
+
+.tab-row {
+  padding-top: 30px !important;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
