@@ -18,3 +18,48 @@
 </head>
 
 <body>
+
+  <nav>
+    <div class="nav-wrapper" style="padding-left: 50px; padding-right: 50px">
+      <a href="#" data-target="slide-out" class="sidenav-trigger" style="display: inline;"><i class="material-icons">menu</i></a>
+      <a href="#" class="brand-logo">Pharma - Admin Panel</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="collapsible.html">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul id="slide-out" class="sidenav">
+    <li>
+      <div class="user-view">
+        <div class="background">
+          <img src="https://picsum.photos/id/1042/400/600/?blur=2">
+        </div>
+        <!-- <a href="#user"><img class="circle" src="images/yuna.jpg"></a> -->
+        <a href="#name"><span class="white-text name">John Doe</span></a>
+        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      </div>
+    </li>
+    <li><a class="subheader">Inventory</a></li>
+    <li><a class="waves-effect" href="../chemicals"><i class="material-icons">science</i>Chemicals</a></li>
+    <li><a class="waves-effect" href="../medicines"><i class="material-icons">medication</i>Medicines</a></li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="waves-effect" href="#!"><i class="material-icons">precision_manufacturing</i>Production</a></li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Transactions</a></li>
+    <li><a class="waves-effect href=" #!"><i class="material-icons">local_shipping</i>Vendors</a></li>
+    <li><a class="waves-effect href=" #!"><i class="material-icons">person</i>Customers</a></li>
+  </ul>
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems);
+    });
+  </script>
