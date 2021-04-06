@@ -1,6 +1,6 @@
 <?php
-include("../include/header.php");
-include("../include/connection.php");
+include("./include/header.php");
+include("./include/connection.php");
 
 $query = "select * from chemicals";
 $result = mysqli_query($con, $query);
@@ -14,11 +14,11 @@ if (isset($_REQUEST["edit"])) {
 if (isset($_REQUEST["delete"])) {
   $query2 = "delete from chemicals where id='" . $_REQUEST["delete"] . "'";
   $result2 = mysqli_query($con, $query2);
-  header("location:./index.php");
+  header("location:./chemicals.php");
 }
 ?>
 
-<link rel="stylesheet" href="../styles/styles.css">
+<link rel="stylesheet" href="./styles/styles.css">
 
 
 <div class="container ">
@@ -58,18 +58,18 @@ if (isset($_REQUEST["delete"])) {
             <tr>
               <td><?php echo $fetch->id ?></td>
               <td>
-                <img src="../../uploads/<?php echo $fetch->image ?>" width="100px">
+                <img src="../uploads/<?php echo $fetch->image ?>" width="100px">
               </td>
               <td><?php echo $fetch->name ?></td>
               <td><?php echo $fetch->rate ?></td>
               <td><?php echo $fetch->qty ?></td>
               <td>
-                <a class="btn-floating blue" href="./index.php?edit=<?php echo $fetch->id ?>">
+                <a class="btn-floating blue" href="./chemicals.php?edit=<?php echo $fetch->id ?>">
                   <i class="material-icons">edit</i>
                 </a>
               </td>
               <td>
-                <a class="btn-floating red" href="./index.php?delete=<?php echo $fetch->id ?>">
+                <a class="btn-floating red" href="./chemicals.php?delete=<?php echo $fetch->id ?>">
                   <i class=" material-icons">delete</i>
                 </a>
               </td>
@@ -81,7 +81,7 @@ if (isset($_REQUEST["delete"])) {
 
     <div id="add" class="col s12 tab-row">
       <div class="row">
-        <form action="./chemAdd.php" method="POST" class="col s12" enctype="multipart/form-data">
+        <form action="./chemicals/chemAdd.php" method="POST" class="col s12" enctype="multipart/form-data">
           <div class="row">
             <div class="input-field col s9">
               <input name="name" id="name" type="text" class="validate" required autocomplete="off">
@@ -113,12 +113,12 @@ if (isset($_REQUEST["delete"])) {
 
     <div id="modify" class="col s12 tab-row">
       <div class="row">
-        <form action="./chemEdit.php" method="POST" class="col s12" enctype="multipart/form-data">
+        <form action="./chemicals/chemEdit.php" method="POST" class="col s12" enctype="multipart/form-data">
           <input name="id" type="text" value="<?php echo $modify->id ?>" hidden>
           <div class="row">
             <div class="col s2">
               Old Image
-              <img src="../../uploads/<?php echo $modify->image ?>" width="100px">
+              <img src="../uploads/<?php echo $modify->image ?>" width="100px">
             </div>
             <div class="input-field col s7">
               <input name="name" id="name" type="text" value="<?php echo $modify->name ?>" class="validate" required autocomplete="off">
@@ -156,4 +156,4 @@ if (isset($_REQUEST["delete"])) {
   var instance = M.Tabs.init(document.querySelector(".tabs"));
 </script>
 
-<?php include("../include/footer.php") ?>
+<?php include("./include/footer.php") ?>

@@ -25,4 +25,4 @@ echo $rename;
 
 $query = "update chemicals set name='" . $_POST['name'] . "', rate='" . $_POST['rate'] . "', image='" . $rename . "' where id='" . $_POST['id'] . "'";
 $result = mysqli_query($con, $query);
-header("location:./index.php");
+header("location:../chemicals.php");

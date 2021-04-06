@@ -22,7 +22,7 @@
   <nav class="indigo darken-1">
     <div class="nav-wrapper" style="padding-left: 50px; padding-right: 50px">
       <a href="#" data-target="slide-out" class="sidenav-trigger" style="display: inline;"><i class="material-icons">menu</i></a>
-      <a href="#" class="brand-logo">Pharma - Admin Panel</a>
+      <a href="../admin" class="brand-logo">Pharma - Admin Panel</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="collapsible.html">Logout</a></li>
       </ul>
@@ -41,7 +41,7 @@
       </div>
     </li>
     <li><a class="subheader">Inventory</a></li>
-    <li><a class="waves-effect" href="../chemicals"><i class="material-icons">science</i>Chemicals</a></li>
+    <li><a class="waves-effect" href="./chemicals.php"><i class="material-icons">science</i>Chemicals</a></li>
     <li><a class="waves-effect" href="../medicines"><i class="material-icons">medication</i>Medicines</a></li>
     <li>
       <div class="divider"></div>
