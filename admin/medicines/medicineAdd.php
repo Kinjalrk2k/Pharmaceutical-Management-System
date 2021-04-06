@@ -22,6 +22,6 @@ $rename = md5(time() . rand()) . "." . $ext;
 move_uploaded_file($_FILES["image"]["tmp_name"], $target_dir . $rename);
 echo $rename;
 
-$query = "insert into chemicals set name='" . $_POST['name'] . "', rate='" . $_POST['rate'] . "', image='" . $rename . "'";
+$query = "insert into medicines set name='" . $_POST['name'] . "', image='" . $rename . "'";
 $result = mysqli_query($con, $query);
-header("location:../chemicals.php");
+header("location:../medicines.php");

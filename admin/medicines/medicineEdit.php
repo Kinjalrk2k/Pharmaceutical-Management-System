@@ -7,6 +7,7 @@ $allowed_exts = array('gif', 'png', 'jpg', 'jpeg');
 $target_file = $target_dir . basename($_FILES["image"]["name"]);
 $ext = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
+
 if (!in_array($ext, $allowed_exts)) {
     echo "The file you are trying to upload is not an Image";
     return;
@@ -22,6 +23,6 @@ $rename = md5(time() . rand()) . "." . $ext;
 move_uploaded_file($_FILES["image"]["tmp_name"], $target_dir . $rename);
 echo $rename;
 
-$query = "insert into chemicals set name='" . $_POST['name'] . "', rate='" . $_POST['rate'] . "', image='" . $rename . "'";
+$query = "update medicines set name='" . $_POST['name'] . "', image='" . $rename . "' where id='" . $_POST['id'] . "'";
 $result = mysqli_query($con, $query);
-header("location:../chemicals.php");
+header("location:../medicines.php");

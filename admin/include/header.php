@@ -42,11 +42,13 @@
     </li>
     <li><a class="subheader">Inventory</a></li>
     <li><a class="waves-effect" href="./chemicals.php"><i class="material-icons">science</i>Chemicals</a></li>
-    <li><a class="waves-effect" href="../medicines"><i class="material-icons">medication</i>Medicines</a></li>
+    <li><a class="waves-effect" href="./medicines.php"><i class="material-icons">medication</i>Medicines</a></li>
     <li>
       <div class="divider"></div>
     </li>
-    <li><a class="waves-effect" href="#!"><i class="material-icons">precision_manufacturing</i>Production</a></li>
+    <li><a class="subheader">Production</a></li>
+    <li><a class="waves-effect" href="#!"><i class="material-icons">pie_chart</i>Composition</a></li>
+    <li><a class="waves-effect" href="#!"><i class="material-icons">precision_manufacturing</i>Manufacture</a></li>
     <li>
       <div class="divider"></div>
     </li>
