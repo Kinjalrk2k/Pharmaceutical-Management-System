@@ -45,6 +45,7 @@ if (isset($_REQUEST["delete"])) {
         <thead>
           <tr>
             <th>#</th>
+            <th>Image</th>
             <th>Chemical Name</th>
             <th>Rate (per Kg)</th>
             <th>Available Quantity (Kg)</th>
@@ -56,6 +57,9 @@ if (isset($_REQUEST["delete"])) {
           <?php while ($fetch = mysqli_fetch_object($result)) { ?>
             <tr>
               <td><?php echo $fetch->id ?></td>
+              <td>
+                <img src="../../uploads/<?php echo $fetch->image ?>" width="100px">
+              </td>
               <td><?php echo $fetch->name ?></td>
               <td><?php echo $fetch->rate ?></td>
               <td><?php echo $fetch->qty ?></td>
@@ -77,7 +81,7 @@ if (isset($_REQUEST["delete"])) {
 
     <div id="add" class="col s12 tab-row">
       <div class="row">
-        <form action="./chemAdd.php" method="POST" class="col s12">
+        <form action="./chemAdd.php" method="POST" class="col s12" enctype="multipart/form-data">
           <div class="row">
             <div class="input-field col s9">
               <input name="name" id="name" type="text" class="validate" required autocomplete="off">
@@ -86,6 +90,15 @@ if (isset($_REQUEST["delete"])) {
             <div class="input-field col s3">
               <input name="rate" id="rate" type="number" class="validate" required>
               <label for="rate">Rate (per Kg)</label>
+            </div>
+          </div>
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>Upload Image</span>
+              <input name="image" type="file">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
             </div>
           </div>
           <div class="flex-center">
@@ -100,16 +113,29 @@ if (isset($_REQUEST["delete"])) {
 
     <div id="modify" class="col s12 tab-row">
       <div class="row">
-        <form action="./chemEdit.php" method="POST" class="col s12">
+        <form action="./chemEdit.php" method="POST" class="col s12" enctype="multipart/form-data">
           <input name="id" type="text" value="<?php echo $modify->id ?>" hidden>
           <div class="row">
-            <div class="input-field col s9">
+            <div class="col s2">
+              Old Image
+              <img src="../../uploads/<?php echo $modify->image ?>" width="100px">
+            </div>
+            <div class="input-field col s7">
               <input name="name" id="name" type="text" value="<?php echo $modify->name ?>" class="validate" required autocomplete="off">
               <label for="name">Chemical Name</label>
             </div>
             <div class="input-field col s3">
               <input name="rate" id="rate" type="number" value="<?php echo $modify->rate ?>" class="validate" required>
               <label for="rate">Rate (per Kg)</label>
+            </div>
+          </div>
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>Upload Image</span>
+              <input name="image" type="file">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
             </div>
           </div>
           <div class="flex-center">
