@@ -66,12 +66,15 @@ if (isset($_REQUEST["delete"])) {
               <td><?php echo $fetch->qty ?></td>
               <td>
                 <div class="switch">
-                  <label>
-                    No
-                    <input type="checkbox" <?php echo ($fetch->forSale == "1") ? "checked" : "" ?>>
-                    <span class="lever"></span>
-                    Yes
-                  </label>
+                  <form action="./medicines/toggleSale.php" method="POST">
+                    <input type="text" name="id" value="<?php echo $fetch->id ?>" hidden>
+                    <label>
+                      No
+                      <input type="checkbox" name="forSale" value="<?php echo $fetch->id ?>" <?php echo ($fetch->forSale == "1") ? "checked" : "" ?> onchange="this.form.submit()">
+                      <span class="lever"></span>
+                      Yes
+                    </label>
+                  </form>
                 </div>
               </td>
               <td>
