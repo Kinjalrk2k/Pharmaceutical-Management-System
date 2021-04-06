@@ -20,9 +20,9 @@ if (isset($_REQUEST["delete"])) {
 
 <link rel="stylesheet" href="../styles/styles.css">
 
-<!-- <h1>Chemicals</h1> -->
 
 <div class="container ">
+  <h1>Chemicals</h1>
   <div class="row">
     <div class="col s12">
       <ul class="tabs">

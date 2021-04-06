@@ -10,3 +10,20 @@
   display: flex;
   justify-content: center;
 }
+
+.tabs .tab a {
+  color: #3949ab !important;
+  font-weight: 600;
+}
+
+.tabs .tab a.active {
+  font-weight: 800;
+}
+
+.tabs .tab.disabled a {
+  font-weight: 300;
+}
+
+.tabs .indicator {
+  background-color: #3949ab;
+}

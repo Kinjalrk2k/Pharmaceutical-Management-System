@@ -19,7 +19,7 @@
 
 <body>
 
-  <nav>
+  <nav class="indigo darken-1">
     <div class="nav-wrapper" style="padding-left: 50px; padding-right: 50px">
       <a href="#" data-target="slide-out" class="sidenav-trigger" style="display: inline;"><i class="material-icons">menu</i></a>
       <a href="#" class="brand-logo">Pharma - Admin Panel</a>
