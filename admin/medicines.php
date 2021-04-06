@@ -21,7 +21,7 @@ if (isset($_REQUEST["delete"])) {
 <link rel="stylesheet" href="./styles/styles.css">
 
 
-<div class="container ">
+<div class="container">
   <h1>Medicines</h1>
   <div class="row">
     <div class="col s12">

@@ -47,7 +47,7 @@
       <div class="divider"></div>
     </li>
     <li><a class="subheader">Production</a></li>
-    <li><a class="waves-effect" href="#!"><i class="material-icons">pie_chart</i>Composition</a></li>
+    <li><a class="waves-effect" href="./composition.php"><i class="material-icons">pie_chart</i>Composition</a></li>
     <li><a class="waves-effect" href="#!"><i class="material-icons">precision_manufacturing</i>Manufacture</a></li>
     <li>
       <div class="divider"></div>
