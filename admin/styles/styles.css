@@ -27,3 +27,8 @@
 .tabs .indicator {
   background-color: #3949ab;
 }
+
+.insufficient {
+  color: red;
+  font-weight: 600;
+}
