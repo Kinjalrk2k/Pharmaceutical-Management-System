@@ -15,7 +15,6 @@ if (isset($_REQUEST["delete"])) {
   $queryCheck = "select count(*) as count from composition where cid='" . $_REQUEST["delete"] . "'";
   $resultCount = mysqli_query($con, $queryCheck);
   $count = mysqli_fetch_object($resultCount)->count;
-  echo $count;
 
   if ($count > 0) {
     echo "<script type='text/javascript'>

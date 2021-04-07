@@ -1,6 +1,6 @@
-<?php include("./include/header.php") ?>
+<?php
+include("./include/header.php");
 
-<a href="./medicines">Medicines</a>
-<a href="./chemicals">Chemicals</a>
+header("location:./medicines.php");
 
-<?php include("./include/footer.php") ?>
+include("./include/footer.php");
