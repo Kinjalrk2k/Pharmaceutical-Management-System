@@ -36,8 +36,8 @@
           <img src="https://picsum.photos/id/1042/400/600/?blur=2">
         </div>
         <!-- <a href="#user"><img class="circle" src="images/yuna.jpg"></a> -->
-        <a href="#name"><span class="white-text name">John Doe</span></a>
-        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+        <a href="#name"><span class="white-text name"><?php echo $_SESSION["NAME"] ?></span></a>
+        <a href="#email"><span class="white-text email"><?php echo $_SESSION["EMAIL"] ?></span></a>
       </div>
     </li>
     <li><a class="subheader">Inventory</a></li>

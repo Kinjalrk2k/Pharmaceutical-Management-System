@@ -1,6 +1,6 @@
 <?php
-include("./include/header.php");
 include("./include/connection.php");
+include("./include/header.php");
 
 $query = "select id, name from medicines";
 $medicines = mysqli_query($con, $query);
