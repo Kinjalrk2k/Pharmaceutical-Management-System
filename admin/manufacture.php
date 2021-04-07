@@ -27,7 +27,6 @@ if (isset($_REQUEST["med"])) {
   $resultCount = mysqli_query($con, $query3);
   $fetchCount = mysqli_fetch_object($resultCount)->count;
   $isManufacturable = $fetchCount > 0 ? 0 : 1;
-  echo $isManufacturable;
 }
 
 
@@ -65,12 +64,12 @@ if (isset($_REQUEST["med"])) {
       <form action="" method="POST" class="col s3">
         <input type="text" name="med" value="<?php echo $medicine->id ?>" hidden>
         <div class="input-field col s9">
-          <input id="units" name="units" type="number" step="any" value="<?php echo $units ?>" class="validate" required onchange="this.form.submit()">
+          <input id="units" name="units" type="number" step="any" min="1" value="<?php echo $units ?>" class="validate" required onchange="this.form.submit()">
           <label for="units">Units</label>
         </div>
       </form>
       <div class="col s6">
-        <form action="">
+        <form action="./manufacture/produce.php" action="POST">
           <input type="text" name="med" value="<?php echo $medicine->id ?>" hidden>
           <input type="text" name="units" value="<?php echo $units ?>" hidden>
           <button type="submit" class="waves-effect waves-light btn-large" <?php echo ($isManufacturable) ? "" : "disabled" ?>>Manufacture</button>
