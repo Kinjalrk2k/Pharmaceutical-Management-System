@@ -13,6 +13,19 @@ if (isset($_POST["register"])) {
     $hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
     $query1 = "insert into users set name='" . $_POST["name"] . "', email='" . $_POST["email"] . "', password='" . $hash . "', type='" . $_POST["type"] . "'";
     $result1 = mysqli_query($con, $query1);
+
+    @session_start();
+    $_SESSION['NAME'] = $_POST["name"];
+    $_SESSION['EMAIL'] = $_POST["email"];
+    $_SESSION['USER'] = $_POST["type"];
+
+    if ($_POST["type"] == "customer") {
+      header("location:index.php");
+    } else if ($_POST["type"] == "admin") {
+      header("location:../admin");
+    } else {
+      header("location:../vendor");
+    }
   }
 }
 ?>

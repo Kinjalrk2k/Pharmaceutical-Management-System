@@ -10,9 +10,21 @@ if (isset($_POST["login"])) {
   $count = mysqli_num_rows($result);
 
   if ($count > 0) {
-    $hash = mysqli_fetch_object($result)->password;
+    $fetch = mysqli_fetch_object($result);
+    $hash = $fetch->password;
     if (password_verify($_POST["password"], $hash)) {
-      echo "OK";
+      @session_start();
+      $_SESSION['NAME'] = $fetch->name;
+      $_SESSION['EMAIL'] = $fetch->email;
+      $_SESSION['USER'] = $fetch->type;
+
+      if ($_POST["type"] == "customer") {
+        header("location:index.php");
+      } else if ($_POST["type"] == "admin") {
+        header("location:../admin");
+      } else {
+        header("location:../vendor");
+      }
     } else {
       echo $error_modal;
     }
