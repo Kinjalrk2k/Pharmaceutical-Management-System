@@ -24,7 +24,7 @@
       <a href="#" data-target="slide-out" class="sidenav-trigger" style="display: inline;"><i class="material-icons">menu</i></a>
       <a href="../admin" class="brand-logo">Pharma - Admin Panel</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="collapsible.html">Logout</a></li>
+        <li><a href="../auth/logout.php">Logout</a></li>
       </ul>
     </div>
   </nav>
