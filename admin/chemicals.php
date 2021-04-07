@@ -12,9 +12,20 @@ if (isset($_REQUEST["edit"])) {
 }
 
 if (isset($_REQUEST["delete"])) {
-  $query2 = "delete from chemicals where id='" . $_REQUEST["delete"] . "'";
-  $result2 = mysqli_query($con, $query2);
-  header("location:./chemicals.php");
+  $queryCheck = "select count(*) as count from composition where cid='" . $_REQUEST["delete"] . "'";
+  $resultCount = mysqli_query($con, $queryCheck);
+  $count = mysqli_fetch_object($resultCount)->count;
+  echo $count;
+
+  if ($count > 0) {
+    echo "<script type='text/javascript'>
+      window.addEventListener('load', () => openModal())
+    </script>";
+  }
+
+  // $query2 = "delete from chemicals where id='" . $_REQUEST["delete"] . "'";
+  // $result2 = mysqli_query($con, $query2);
+  // header("location:./chemicals.php");
 }
 ?>
 
@@ -151,9 +162,29 @@ if (isset($_REQUEST["delete"])) {
   </div>
 </div>
 
+<div id="del-modal" class="modal">
+  <div class="modal-content">
+    <h4>Can't delete</h4>
+    <p>The chemical you are trying to delete is used to manufacture medicine(s). Please delete the medicine(s) first!</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Okay</a>
+  </div>
+</div>
+
 
 <script>
   var instance = M.Tabs.init(document.querySelector(".tabs"));
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+  });
+
+  function openModal() {
+    var instance = M.Modal.getInstance(document.querySelector('#del-modal'));
+    instance.open();
+  }
 </script>
 
 <?php include("./include/footer.php") ?>
