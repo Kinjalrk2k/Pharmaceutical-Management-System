@@ -50,41 +50,9 @@ if (isset($_REQUEST["delete"])) {
   <hr>
 
   <?php if (isset($_REQUEST["med"])) { ?>
-    <div class="row">
-      <div class="col s7">
-        <img src="../uploads/<?php echo $medicine->image ?>" alt="" width="400px">
-      </div>
-      <div class="col s5">
-        <ul class="collection with-header">
-          <li class="collection-header">
-            <h4><?php echo $medicine->name ?></h4>
-          </li>
-          <li class="collection-item">
-            <h5>#: <?php echo $medicine->id ?></h5>
-          </li>
-          <li class="collection-item">
-            <h5>Quantiy: <?php echo $medicine->qty ?></h5>
-          </li>
-          <li class="collection-item">
-            <div class="row">
-              <form action="./medicines/setprice.php" method="POST">
-                <input type="text" name="id" value="<?php echo $medicine->id ?>" hidden>
-                <div class="input-field col s9">
-                  <input id="price" name="price" type="number" step="any" value="<?php echo $medicine->price ?>" class="validate" required>
-                  <label for="price">Price</label>
-                </div>
-                <button type="submit" class="waves-effect waves-light btn col s3">
-                  Change
-                </button>
-              </form>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
 
+    <h3><?php echo $medicine->name ?></h3>
     <hr>
-
 
     <div class="row">
       <div class="col s9">
@@ -124,7 +92,21 @@ if (isset($_REQUEST["delete"])) {
           </tbody>
         </table>
 
-        <h5>Total Chemical costing: <?php echo $totalCosts ?></h5>
+        <div class="row" style="margin-top: 30px;">
+          <div class="col s6">
+            <h5>Total Chemical costing: <?php echo $totalCosts ?></h5>
+          </div>
+          <form action="./medicines/setprice.php" method="POST" class="col s6">
+            <input type="text" name="id" value="<?php echo $medicine->id ?>" hidden>
+            <div class="input-field col s9">
+              <input id="price" name="price" type="number" step="any" value="<?php echo $medicine->price ?>" class="validate" required>
+              <label for="price">Price</label>
+            </div>
+            <button type="submit" class="waves-effect waves-light btn col s3">
+              Set Price
+            </button>
+          </form>
+        </div>
       </div>
 
       <div class="col s3">
