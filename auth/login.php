@@ -5,7 +5,7 @@ window.addEventListener('load', () => openModal())
 </script>";
 
 if (isset($_POST["login"])) {
-  $query = "select password from users where email='" . $_POST["email"] . "' and type='" . $_POST["type"] . "'";
+  $query = "select * from users where email='" . $_POST["email"] . "' and type='" . $_POST["type"] . "'";
   $result = mysqli_query($con, $query);
   $count = mysqli_num_rows($result);
 
@@ -13,7 +13,7 @@ if (isset($_POST["login"])) {
     $fetch = mysqli_fetch_object($result);
     $hash = $fetch->password;
     if (password_verify($_POST["password"], $hash)) {
-      @session_start();
+      session_start();
       $_SESSION['NAME'] = $fetch->name;
       $_SESSION['EMAIL'] = $fetch->email;
       $_SESSION['USER'] = $fetch->type;
