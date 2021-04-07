@@ -14,6 +14,8 @@ if (isset($_REQUEST["edit"])) {
 if (isset($_REQUEST["delete"])) {
   $query2 = "delete from medicines where id='" . $_REQUEST["delete"] . "'";
   $result2 = mysqli_query($con, $query2);
+  $query3 = "delete from composition where mid='" . $_REQUEST["delete"] . "'";
+  $result3 = mysqli_query($con, $query3);
   header("location:./medicines.php");
 }
 ?>
