@@ -23,9 +23,9 @@ if (isset($_REQUEST["delete"])) {
     </script>";
   }
 
-  // $query2 = "delete from chemicals where id='" . $_REQUEST["delete"] . "'";
-  // $result2 = mysqli_query($con, $query2);
-  // header("location:./chemicals.php");
+  $query2 = "delete from chemicals where id='" . $_REQUEST["delete"] . "'";
+  $result2 = mysqli_query($con, $query2);
+  header("location:./chemicals.php");
 }
 ?>
 
