@@ -10,6 +10,12 @@ $isVendor = isset($_SESSION['NAME']) && isset($_SESSION['EMAIL']) && $_SESSION['
 if (!$isVendor) {
   header("location:./auth/login.php");
 }
+
+if (isset($_POST["sell"])) {
+  $query1 = "update chemicals set qty = qty+" . $_POST["qty"] . " where id='" . $_POST["chem"] . "'";
+  $result1 = mysqli_query($con, $query1);
+  header("refresh:0");
+}
 ?>
 
 <div class="container">
@@ -31,14 +37,17 @@ if (!$isVendor) {
           <?php if ($isVendor) { ?>
             <div class="card-action">
               <div class="row">
-                <div class="col s7">
-                  <p class="range-field">
-                    <input type="range" class="range" min="1" max="10" default="1" />
-                  </p>
-                </div>
-                <div class="col s3">
-                  <button class="waves-effect waves-light btn-small">Sell&nbsp;1</button>
-                </div>
+                <form action="" method="POST">
+                  <input type="text" name="chem" value="<?php echo $fetch->id ?>" hidden>
+                  <div class="col s7">
+                    <p class="range-field">
+                      <input type="range" name="qty" class="range" min="1" max="10" default="1" />
+                    </p>
+                  </div>
+                  <div class="col s3">
+                    <button type="submit" name="sell" class="waves-effect waves-light btn-small">Sell&nbsp;1</button>
+                  </div>
+                </form>
               </div>
             </div>
           <?php } ?>
@@ -56,10 +65,7 @@ if (!$isVendor) {
 
     document.querySelectorAll(".range").forEach(range => {
       range.value = 1;
-      console.log(range)
       range.addEventListener("change", (e) => {
-        console.log(e);
-        // console.log(e.target.parentElement.parentElement.nextElementSibling.children[0])
         e.target.parentElement.parentElement.nextElementSibling.children[0].innerHTML = `Sell&nbsp;${e.target.value}`
       })
     })
