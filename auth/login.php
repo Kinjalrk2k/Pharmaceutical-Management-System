@@ -124,6 +124,12 @@ if (isset($_POST["login"])) {
     </div>
   </div>
 
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large red" href="../">
+      <i class="large material-icons">home</i>
+    </a>
+  </div>
+
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
