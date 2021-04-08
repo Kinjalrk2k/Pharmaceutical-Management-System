@@ -2,15 +2,18 @@
 include("./include/connection.php");
 include("./include/header.php");
 
-$query = "select * from medicines where forSale='1'";
+$query = "select * from chemicals";
 $result = mysqli_query($con, $query);
 
 @session_start();
-$isCustomer = isset($_SESSION['NAME']) && isset($_SESSION['EMAIL']) && $_SESSION['USER'] == "customer";
+$isVendor = isset($_SESSION['NAME']) && isset($_SESSION['EMAIL']) && $_SESSION['USER'] == "vendor";
+if (!$isVendor) {
+  header("location:./auth/login.php");
+}
 ?>
 
 <div class="container">
-  <h1>Medicines Available</h1>
+  <h1>Chemicals Required</h1>
 
   <div class="row">
     <?php while ($fetch = mysqli_fetch_object($result)) { ?>
@@ -21,20 +24,20 @@ $isCustomer = isset($_SESSION['NAME']) && isset($_SESSION['EMAIL']) && $_SESSION
             <!-- <span class="card-title"></span> -->
           </div>
           <div class="card-content">
-            <h4><?php echo $fetch->name ?></h4>
-            <h5>₹ <?php echo $fetch->price ?></h5>
+            <h4 style="overflow: hidden; text-overflow: ellipsis;"><?php echo $fetch->name ?></h4>
+            <h5>₹ <?php echo $fetch->rate ?></h5>
             <p>Available Quatity: <?php echo $fetch->qty ?> units</p>
           </div>
-          <?php if ($isCustomer) { ?>
+          <?php if ($isVendor) { ?>
             <div class="card-action">
               <div class="row">
                 <div class="col s7">
                   <p class="range-field">
-                    <input type="range" class="range" min="1" max="<?php echo $fetch->qty ?>" default="1" />
+                    <input type="range" class="range" min="1" max="10" default="1" />
                   </p>
                 </div>
                 <div class="col s3">
-                  <button class="waves-effect waves-light btn-small">Buy&nbsp;1</button>
+                  <button class="waves-effect waves-light btn-small">Sell&nbsp;1</button>
                 </div>
               </div>
             </div>
@@ -57,7 +60,7 @@ $isCustomer = isset($_SESSION['NAME']) && isset($_SESSION['EMAIL']) && $_SESSION
       range.addEventListener("change", (e) => {
         console.log(e);
         // console.log(e.target.parentElement.parentElement.nextElementSibling.children[0])
-        e.target.parentElement.parentElement.nextElementSibling.children[0].innerHTML = `Buy&nbsp;${e.target.value}`
+        e.target.parentElement.parentElement.nextElementSibling.children[0].innerHTML = `Sell&nbsp;${e.target.value}`
       })
     })
   })

@@ -19,11 +19,11 @@ if (isset($_POST["login"])) {
       $_SESSION['USER'] = $fetch->type;
 
       if ($_POST["type"] == "customer") {
-        header("location:index.php");
+        header("location:../index.php");
       } else if ($_POST["type"] == "admin") {
         header("location:../admin");
       } else {
-        header("location:../vendor");
+        header("location:../vendor.php");
       }
     } else {
       echo $error_modal;
@@ -96,7 +96,6 @@ if (isset($_POST["login"])) {
         <div class="row">
           <div class="input-field col s12">
             <select name="type">
-              <option value="" disabled selected>Choose your option</option>
               <option value="customer">Customer</option>
               <option value="vendor">Vendor</option>
               <option value="admin">Administrator</option>

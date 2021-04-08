@@ -1,3 +1,8 @@
+<?php
+@session_start();
+$isAuth = isset($_SESSION['NAME']) && isset($_SESSION['EMAIL']) && isset($_SESSION['USER']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,10 +27,18 @@
   <nav class="indigo darken-1">
     <div class="nav-wrapper" style="padding-left: 50px; padding-right: 50px">
       <a href="#" data-target="slide-out" class="sidenav-trigger" style="display: inline;"><i class="material-icons">menu</i></a>
-      <a href="../admin" class="brand-logo">Pharma - Admin Panel</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="./auth/logout.php">Logout</a></li>
-      </ul>
+      <a href="./" class="brand-logo">Pharma</a>
+
+      <?php if ($isAuth) { ?>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="./auth/logout.php">Logout</a></li>
+        </ul>
+      <?php } else { ?>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="./auth/register.php">Register</a></li>
+          <li><a href="./auth/login.php">Login</a></li>
+        </ul>
+      <?php } ?>
     </div>
   </nav>
 
