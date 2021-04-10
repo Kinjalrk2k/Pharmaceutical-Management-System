@@ -53,8 +53,8 @@
       <div class="divider"></div>
     </li>
     <li><a class="subheader">Transactions</a></li>
-    <li><a class="waves-effect href=" #!"><i class="material-icons">local_shipping</i>Vendors</a></li>
-    <li><a class="waves-effect href=" #!"><i class="material-icons">person</i>Customers</a></li>
+    <li><a class="waves-effect" href="./vendors.php"><i class="material-icons">local_shipping</i>Vendors</a></li>
+    <li><a class="waves-effect" href="./customers.php"><i class="material-icons">person</i>Customers</a></li>
   </ul>
 
 
