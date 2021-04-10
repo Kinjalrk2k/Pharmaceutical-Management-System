@@ -6,7 +6,7 @@ $query = "select * from chemicals";
 $result = mysqli_query($con, $query);
 
 @session_start();
-$isVendor = isset($_SESSION['NAME']) && isset($_SESSION['EMAIL']) && $_SESSION['USER'] == "vendor";
+$isVendor = isset($_SESSION['ID']) && isset($_SESSION['NAME']) && isset($_SESSION['EMAIL']) && $_SESSION['USER'] == "vendor";
 if (!$isVendor) {
   header("location:./auth/login.php");
 }

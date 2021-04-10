@@ -17,6 +17,7 @@ if (isset($_POST["login"])) {
       $_SESSION['NAME'] = $fetch->name;
       $_SESSION['EMAIL'] = $fetch->email;
       $_SESSION['USER'] = $fetch->type;
+      $_SESSION['ID'] = $fetch->id;
 
       if ($_POST["type"] == "customer") {
         header("location:../index.php");

@@ -18,6 +18,7 @@ if (isset($_POST["register"])) {
     $_SESSION['NAME'] = $_POST["name"];
     $_SESSION['EMAIL'] = $_POST["email"];
     $_SESSION['USER'] = $_POST["type"];
+    $_SESSION['ID'] = $fetch->id;
 
     if ($_POST["type"] == "customer") {
       header("location:../index.php");

@@ -6,7 +6,7 @@ $query = "select * from medicines where forSale='1'";
 $result = mysqli_query($con, $query);
 
 @session_start();
-$isCustomer = isset($_SESSION['NAME']) && isset($_SESSION['EMAIL']) && $_SESSION['USER'] == "customer";
+$isCustomer = isset($_SESSION['ID']) && isset($_SESSION['NAME']) && isset($_SESSION['EMAIL']) && $_SESSION['USER'] == "customer";
 
 if (isset($_POST["buy"])) {
   $query1 = "update medicines set qty = qty-" . $_POST["qty"] . " where id='" . $_POST["med"] . "'";
