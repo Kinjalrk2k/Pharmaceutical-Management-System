@@ -11,6 +11,9 @@ $isCustomer = isset($_SESSION['ID']) && isset($_SESSION['NAME']) && isset($_SESS
 if (isset($_POST["buy"])) {
   $query1 = "update medicines set qty = qty-" . $_POST["qty"] . " where id='" . $_POST["med"] . "'";
   $result1 = mysqli_query($con, $query1);
+
+  $query2 = "insert into customertransactions set mid='" . $_POST["med"] . "', cid='" . $_SESSION['ID'] . "', qty='" . $_POST["qty"] . "'";
+  $result2 = mysqli_query($con, $query2);
   header("refresh:0");
 }
 ?>

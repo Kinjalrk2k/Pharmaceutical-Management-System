@@ -14,6 +14,9 @@ if (!$isVendor) {
 if (isset($_POST["sell"])) {
   $query1 = "update chemicals set qty = qty+" . $_POST["qty"] . " where id='" . $_POST["chem"] . "'";
   $result1 = mysqli_query($con, $query1);
+
+  $query2 = "insert into vendortransactions set cid='" . $_POST["chem"] . "', vid='" . $_SESSION['ID'] . "', qty='" . $_POST["qty"] . "'";
+  $result2 = mysqli_query($con, $query2);
   header("refresh:0");
 }
 ?>
