@@ -74,4 +74,5 @@ if (isset($_POST["sell"])) {
     })
   })
 </script>
-</body>
+
+<?php include("./include/footer.php") ?>
