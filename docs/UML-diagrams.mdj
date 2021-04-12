@@ -6319,7 +6319,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF4xr9pIMSbOCA="
 							},
-							"name": "Authenticated",
+							"name": "Administrator",
 							"ownedViews": [
 								{
 									"_type": "UMLFrameView",
@@ -6338,11 +6338,11 @@
 												"$ref": "AAAAAAF4xr9pIMSdRSw="
 											},
 											"font": "Arial;13;0",
-											"left": 32.72998046875,
-											"top": 229,
-											"width": 80.50439453125,
+											"left": 40.72998046875,
+											"top": 21,
+											"width": 77.578125,
 											"height": 13,
-											"text": "Authenticated"
+											"text": "Administrator"
 										},
 										{
 											"_type": "LabelView",
@@ -6351,18 +6351,18 @@
 												"$ref": "AAAAAAF4xr9pIMSdRSw="
 											},
 											"font": "Arial;13;1",
-											"left": 13,
-											"top": 229,
+											"left": 21,
+											"top": 21,
 											"width": 14.72998046875,
 											"height": 13,
 											"text": "sd"
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 8,
-									"top": 224,
+									"left": 16,
+									"top": 16,
 									"width": 1041,
-									"height": 1033,
+									"height": 1241,
 									"nameLabel": {
 										"$ref": "AAAAAAF4xr9pIMSerwg="
 									},
@@ -10968,6 +10968,73 @@
 									"activation": {
 										"$ref": "AAAAAAF4xxg7PMnB6Xo="
 									}
+								},
+								{
+									"_type": "UMLCombinedFragmentView",
+									"_id": "AAAAAAF4xx3Hecn/wGY=",
+									"_parent": {
+										"$ref": "AAAAAAF4xr9pIMScteM="
+									},
+									"model": {
+										"$ref": "AAAAAAF4xx3HeMn9bpA="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF4xx3HecoA2hw=",
+											"_parent": {
+												"$ref": "AAAAAAF4xx3Hecn/wGY="
+											},
+											"font": "Arial;13;0",
+											"left": 71.9599609375,
+											"top": 221,
+											"width": 80.50439453125,
+											"height": 13,
+											"text": "Authenticated"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF4xx3HecoBHy0=",
+											"_parent": {
+												"$ref": "AAAAAAF4xx3Hecn/wGY="
+											},
+											"font": "Arial;13;1",
+											"left": 45,
+											"top": 221,
+											"width": 21.9599609375,
+											"height": 13,
+											"text": "seq"
+										},
+										{
+											"_type": "UMLInteractionOperandCompartmentView",
+											"_id": "AAAAAAF4xx3HesoCK4I=",
+											"_parent": {
+												"$ref": "AAAAAAF4xx3Hecn/wGY="
+											},
+											"model": {
+												"$ref": "AAAAAAF4xx3HeMn9bpA="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 40,
+											"top": 239,
+											"width": 177.576171875
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 40,
+									"top": 216,
+									"width": 993,
+									"height": 1025,
+									"nameLabel": {
+										"$ref": "AAAAAAF4xx3HecoA2hw="
+									},
+									"frameTypeLabel": {
+										"$ref": "AAAAAAF4xx3HecoBHy0="
+									},
+									"operandCompartment": {
+										"$ref": "AAAAAAF4xx3HesoCK4I="
+									}
 								}
 							]
 						}
@@ -11546,6 +11613,17 @@
 								"$ref": "AAAAAAF4xxWnZclNrrE="
 							},
 							"isMultiInstance": false
+						}
+					],
+					"fragments": [
+						{
+							"_type": "UMLCombinedFragment",
+							"_id": "AAAAAAF4xx3HeMn9bpA=",
+							"_parent": {
+								"$ref": "AAAAAAF4xr9pIMSbOCA="
+							},
+							"name": "Authenticated",
+							"interactionOperator": "seq"
 						}
 					]
 				},
