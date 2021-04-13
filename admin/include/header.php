@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Compiled and minified CSS -->
@@ -53,8 +56,8 @@
       <div class="divider"></div>
     </li>
     <li><a class="subheader">Transactions</a></li>
-    <li><a class="waves-effect href=" #!"><i class="material-icons">local_shipping</i>Vendors</a></li>
-    <li><a class="waves-effect href=" #!"><i class="material-icons">person</i>Customers</a></li>
+    <li><a class="waves-effect" href="./vendors.php"><i class="material-icons">local_shipping</i>Vendors</a></li>
+    <li><a class="waves-effect" href="./customers.php"><i class="material-icons">person</i>Customers</a></li>
   </ul>
 
 

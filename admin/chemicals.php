@@ -18,13 +18,14 @@ if (isset($_REQUEST["delete"])) {
 
   if ($count > 0) {
     echo "<script type='text/javascript'>
-      window.addEventListener('load', () => openModal())
+    console.log('del');
+    window.addEventListener('load', () => openModal())
     </script>";
+  } else {
+    $query2 = "delete from chemicals where id='" . $_REQUEST["delete"] . "'";
+    $result2 = mysqli_query($con, $query2);
+    header("location:./chemicals.php");
   }
-
-  $query2 = "delete from chemicals where id='" . $_REQUEST["delete"] . "'";
-  $result2 = mysqli_query($con, $query2);
-  header("location:./chemicals.php");
 }
 ?>
 

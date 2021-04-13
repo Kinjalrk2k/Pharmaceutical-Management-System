@@ -18,13 +18,14 @@ if (isset($_POST["register"])) {
     $_SESSION['NAME'] = $_POST["name"];
     $_SESSION['EMAIL'] = $_POST["email"];
     $_SESSION['USER'] = $_POST["type"];
+    $_SESSION['ID'] = $fetch->id;
 
     if ($_POST["type"] == "customer") {
-      header("location:index.php");
+      header("location:../index.php");
     } else if ($_POST["type"] == "admin") {
       header("location:../admin");
     } else {
-      header("location:../vendor");
+      header("location:../vendor.php");
     }
   }
 }
@@ -37,6 +38,8 @@ if (isset($_POST["register"])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -110,7 +113,7 @@ if (isset($_POST["register"])) {
         <br />
         <center>
           <div class='row'>
-            <button type='submit' name='register' class='col s12 btn btn-large waves-effect indigo'>Login</button>
+            <button type='submit' name='register' class='col s12 btn btn-large waves-effect indigo'>Register</button>
           </div>
         </center>
       </form>
@@ -125,6 +128,12 @@ if (isset($_POST["register"])) {
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Okay</a>
     </div>
+  </div>
+
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large red" href="../">
+      <i class="large material-icons">home</i>
+    </a>
   </div>
 
   <script>

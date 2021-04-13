@@ -13,10 +13,10 @@ while ($fetch = mysqli_fetch_object($compositions)) {
   $used = $units * $fetch->c_qty;
   echo $used;
   $query2 = "update chemicals set qty = qty-" . $used . " where id='" . $chemId . "'";
-  $compositions = mysqli_query($con, $query2);
+  $result = mysqli_query($con, $query2);
 }
 $query3 = "update medicines set qty = qty+" . $units . " where id='" . $medId . "'";
-$compositions = mysqli_query($con, $query3);
+$result = mysqli_query($con, $query3);
 
 
 header("location:../manufacture.php?med=" . $medId . "");

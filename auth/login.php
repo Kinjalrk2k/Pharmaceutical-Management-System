@@ -17,13 +17,14 @@ if (isset($_POST["login"])) {
       $_SESSION['NAME'] = $fetch->name;
       $_SESSION['EMAIL'] = $fetch->email;
       $_SESSION['USER'] = $fetch->type;
+      $_SESSION['ID'] = $fetch->id;
 
       if ($_POST["type"] == "customer") {
-        header("location:index.php");
+        header("location:../index.php");
       } else if ($_POST["type"] == "admin") {
         header("location:../admin");
       } else {
-        header("location:../vendor");
+        header("location:../vendor.php");
       }
     } else {
       echo $error_modal;
@@ -41,6 +42,9 @@ if (isset($_POST["login"])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -96,7 +100,6 @@ if (isset($_POST["login"])) {
         <div class="row">
           <div class="input-field col s12">
             <select name="type">
-              <option value="" disabled selected>Choose your option</option>
               <option value="customer">Customer</option>
               <option value="vendor">Vendor</option>
               <option value="admin">Administrator</option>
@@ -123,6 +126,12 @@ if (isset($_POST["login"])) {
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Okay</a>
     </div>
+  </div>
+
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large red" href="../">
+      <i class="large material-icons">home</i>
+    </a>
   </div>
 
 
